@@ -1,0 +1,18 @@
+# Vivado
+.cache/
+.hw/
+.ip_user_files/
+.runs/
+.sim/
+
+# Logs
+*.log
+*.jou
+*.str
+
+# Backup-Dateien
+*.backup
+
+# Betriebssystemdateien
+.DS_Store
+Thumbs.db
