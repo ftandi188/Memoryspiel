@@ -27,19 +27,19 @@ begin
         
                 if intern_cntr_select = "00" then
                     intern_cntr_select <= "01";
-                    selected_stelle <= einer_pl1;
+                    selected_stelle <= zehner_pl1;
                 
                 elsif intern_cntr_select = "01" then
                     intern_cntr_select <= "10";
-                    selected_stelle <= zehner_pl2;
+                    selected_stelle <= einer_pl1;
                 
                 elsif intern_cntr_select = "10" then
                     intern_cntr_select <= "11";
-                    selected_stelle <= einer_pl2;
+                    selected_stelle <= zehner_pl2;
                 
                 elsif intern_cntr_select = "11" then
                     intern_cntr_select <= "00";
-                    selected_stelle <= zehner_pl1;
+                    selected_stelle <= einer_pl2;
                 end if;
         
             else
