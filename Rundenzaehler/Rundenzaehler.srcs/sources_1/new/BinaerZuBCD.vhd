@@ -17,28 +17,28 @@ architecture Behavioral of BinaerZuBCD is
     
 begin
     process(score_player1)
-        variable int_Zehner_pl1   :   unsigned(3 downto 0) := (others => '0');
-        variable int_Einer_pl1    :   unsigned(3 downto 0) := (others => '0');
+        variable int_Zehner_pl1   :   unsigned(5 downto 0) := (others => '0');
+        variable int_Einer_pl1    :   unsigned(5 downto 0) := (others => '0');
     
     begin
         int_Zehner_pl1 := unsigned(score_player1) /10;
-        int_Einer_pl1 := unsigned(score_player1) - 10*int_Zehner_pl1;
+        int_Einer_pl1 := unsigned(score_player1) mod 10;
         
-        zehner_pl1 <= std_logic_vector(int_Zehner_pl1);
-        einer_pl1 <= std_logic_vector(int_Einer_pl1);
+        zehner_pl1 <= std_logic_vector(int_Zehner_pl1(3 downto 0));
+        einer_pl1 <= std_logic_vector(int_Einer_pl1(3 downto 0));
         
     end process;
      
     process(score_player2)
-        variable int_Zehner_pl2   :   unsigned(3 downto 0) := (others => '0');
-        variable int_Einer_pl2    :   unsigned(3 downto 0) := (others => '0');
+        variable int_Zehner_pl2   :   unsigned(5 downto 0) := (others => '0');
+        variable int_Einer_pl2    :   unsigned(5 downto 0) := (others => '0');
     
     begin
         int_Zehner_pl2 := unsigned(score_player2) /10;
-        int_Einer_pl2 := unsigned(score_player2) - 10*int_Zehner_pl2;
+        int_Einer_pl2 := unsigned(score_player2) mod 10;
         
-        zehner_pl2 <= std_logic_vector(int_Zehner_pl2);
-        einer_pl2 <= std_logic_vector(int_Einer_pl2);
+        zehner_pl2 <= std_logic_vector(int_Zehner_pl2(3 downto 0));
+        einer_pl2 <= std_logic_vector(int_Einer_pl2(3 downto 0));
         
     end process;
 end Behavioral;

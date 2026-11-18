@@ -40,7 +40,7 @@ begin
             when "0111" => seg <= "1111000";
             when "1000" => seg <= "0000000";
             when "1001" => seg <= "0011000";
-            
+            when others => seg <= "1111111";
         end case;
     end process;
 
